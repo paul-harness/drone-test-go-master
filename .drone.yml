@@ -1,0 +1,29 @@
+kind: pipeline
+type: docker
+name: backend
+
+steps:
+- name: build
+  image: golang:1.15
+  commands:
+  - go build
+  - go test -v
+
+---
+kind: pipeline
+type: docker
+name: frontend
+
+steps:
+- name: build
+  image: node:14
+  commands:
+  - npm install
+  - npm run test
+
+trigger:
+  branch:
+  - master
+
+depends_on:
+- backend
