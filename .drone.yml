@@ -14,6 +14,10 @@ steps:
   commands:
   - go build
   - go test -v
+  when:
+    branch:
+    - master
+  
   
 ---
   
@@ -40,6 +44,8 @@ steps:
     recipients: [ paul.suholet@harness.io, psuholet@gmail.com ]
   when:
     status: [ success, changed, failure ]
+    branch:
+      -master
   
 services:
 - name: redis
