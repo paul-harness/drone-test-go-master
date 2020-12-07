@@ -8,3 +8,9 @@ steps:
   commands:
   - go build
   - go test -v
+  
+- name: node
+  image: node:14
+  commands:
+  - npm install
+  - npm run test
