@@ -15,6 +15,19 @@ steps:
   - npm install
   - npm run test
   
+- name: notify
+  image: drillster/drone-email
+  settings:
+    host: ivoss.com
+    skip_verify: true
+    username: harness@ivoss.com
+    password:
+      from_secret: alex_smtp_pw
+    from: harness@ivoss.com
+    recipients: [ paul.suholet@harness.io, psuholet@gmail.com ]
+  when:
+    status: [ success, changed, failure ]
+  
 services:
 - name: redis
   image: redis:6
