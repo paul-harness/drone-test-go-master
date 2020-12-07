@@ -37,6 +37,9 @@ steps:
     recipients: [ paul.suholet@harness.io, psuholet@gmail.com ]
   when:
     status: [ success, changed, failure ]
+  depends_on:
+  - test
+  - node
   
 services:
 - name: redis
