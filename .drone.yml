@@ -14,3 +14,7 @@ steps:
   commands:
   - npm install
   - npm run test
+  
+services:
+- name: redis
+  image: redis:6
