@@ -14,16 +14,19 @@ steps:
   commands:
   - go build
   - go test -v
-  depends_on:
-  - build
   
+---
+  
+kind: pipeline
+type: docker
+name: frontend 
+
+steps:
 - name: node
   image: node:14
   commands:
   - npm install
   - npm run test
-  depends_on:
-  - build
   
 - name: notify
   image: drillster/drone-email
@@ -37,9 +40,6 @@ steps:
     recipients: [ paul.suholet@harness.io, psuholet@gmail.com ]
   when:
     status: [ success, changed, failure ]
-  depends_on:
-  - test
-  - node
   
 services:
 - name: redis
