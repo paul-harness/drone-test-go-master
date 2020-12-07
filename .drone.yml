@@ -9,11 +9,21 @@ steps:
   - go build
   - go test -v
   
+- name: test
+  image: golang:1.15
+  commands:
+  - go build
+  - go test -v
+  depends_on:
+  - build
+  
 - name: node
   image: node:14
   commands:
   - npm install
   - npm run test
+  depends_on:
+  - build
   
 - name: notify
   image: drillster/drone-email
