@@ -8,8 +8,6 @@ steps:
   commands:
   - go build
   - go test -v
-  depends_on:
-  - redis
   
 - name: test
   image: golang:1.15
