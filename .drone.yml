@@ -11,12 +11,8 @@ steps:
   when:
     event:
       include:
-      - cron
-      - custom
       - push
       - pull_request
-      - tag
-      - rollback
   
 - name: test
   image: golang:1.15
