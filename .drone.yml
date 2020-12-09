@@ -40,6 +40,7 @@ steps:
 - name: paul_maven
   image: maven:3.6.3-jdk-11
   commands:
+  - mvn clean install
   - mvn test
   - mvn package
   
