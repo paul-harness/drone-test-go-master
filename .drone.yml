@@ -6,7 +6,7 @@ steps:
 - name: build
   image: golang:1.15
   commands:
-  - go build
+  - go build -o paulgo
   - go test -v
   when:
     event:
@@ -17,7 +17,7 @@ steps:
 - name: test
   image: golang:1.15
   commands:
-  - go build
+  - go build -o paulgo
   - go test -v
   when:
     branch:
