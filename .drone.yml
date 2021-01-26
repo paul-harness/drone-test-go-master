@@ -60,6 +60,5 @@ steps:
   
 services:
 - name: redis
-  image: redis:6
-  
+  image: redis:6  
   
