@@ -23,7 +23,7 @@ steps:
     branch:
     - master
   
- 
+
 ---
   
 kind: pipeline
