@@ -8,7 +8,6 @@ steps:
   commands:
   - go build
   - go test -v
-
 ---
 kind: pipeline
 type: docker
