@@ -25,4 +25,3 @@ and the dependency:
 		<version>0.1</version>
 	</dependency>
 ```
-
